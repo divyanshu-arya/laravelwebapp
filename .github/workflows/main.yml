@@ -55,4 +55,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           sudo yum install docker -y
-          docker run -itd divyanshuarya/laravel:latest
+          sudo systemctl start docker
+          ansible-playbook <playbook_name>
