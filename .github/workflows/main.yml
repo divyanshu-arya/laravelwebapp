@@ -1,4 +1,4 @@
-name: Deploy to EC2 main.yml
+name: Deploy to EC2
 
 on:
   push:
@@ -16,7 +16,21 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+    
+    - name: Set up PHP, Composer, Node.js, and npm
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.*' # Adjust to your PHP version
+        tools: composer,node
 
+    - name: Install MySQL Client
+      run: sudo apt-get install mysql-client
+
+    - name: Install Laravel Dependencies
+      run: |
+        composer install
+        npm install
+    
     - name: SSH into EC2 and Execute Commands
       uses: appleboy/ssh-action@master
       with:
@@ -24,4 +38,6 @@ jobs:
         username: ec2-user  # or your SSH username
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          mkdir ~/File1/
+            sudo yum install ansible -y
+            sudo yum install git -y
+            git pull origin main
