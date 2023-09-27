@@ -13,8 +13,8 @@ jobs:
   buildAndDeployment:
 
     runs-on:
-      - Ubuntu-latest
-      - Windows-latest
+      - ubuntu-latest
+      - windows-latest
       - macos-latest
 
     steps:
