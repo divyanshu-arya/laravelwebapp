@@ -21,7 +21,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1' # Adjust to your PHP version
-        tools: composer,node
+        tools: composer,nodejs
 
     - name: Install MySQL Client
       run: sudo apt-get install mysql-client
@@ -45,4 +45,6 @@ jobs:
             git init
             git config --global user.name Vaibhav
             git config --global user.email Vaibhav@gmail.com
+            git remote add origin https://github.com/divyanshu-arya/laravelwebapp.git
+            git config --global init.defaultBranch main
             git pull origin main
