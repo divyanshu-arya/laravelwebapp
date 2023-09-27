@@ -40,4 +40,7 @@ jobs:
         script: |
             sudo yum install ansible -y
             sudo yum install git -y
+            mkdir Project
+            cd Project/
+            git init
             git pull origin main
