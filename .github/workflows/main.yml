@@ -24,4 +24,4 @@ jobs:
         username: ec2-user  # or your SSH username
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-        mkdir ~/File1/
+          mkdir ~/File1/
