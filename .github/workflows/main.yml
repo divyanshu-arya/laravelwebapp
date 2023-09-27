@@ -40,8 +40,8 @@ jobs:
     - name: Build Docker image
       uses: docker/build-push-action@v2
       with:
-        context: dockerfile
-        file: .
+        context: .
+        file: dockerfile
         push: true
         tags: divyanshuarya/laravel-nginx
       env:
