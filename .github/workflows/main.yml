@@ -43,4 +43,6 @@ jobs:
             mkdir Project
             cd Project/
             git init
+            git config --global user.name Vaibhav
+            git config --global user.email Vaibhav@gmail.com
             git pull origin main
